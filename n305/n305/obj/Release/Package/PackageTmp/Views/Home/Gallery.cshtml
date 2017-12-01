@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Gallery";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    @Styles.Render("~/Styles/GalleryPageStyles.css")
+</head>
+
+
+<body id="AboutView" ng-controller="GalleryCTRL as app">
+
+    <div id="PageCover">
+
+    </div>
+    <button id="Explore" title="Click to explore" onclick="MakeVisiable()">MENU</button>
+
+    <div id="ItemBox" class="row-fluid">
+        <div class="col-lg-1 GalleryItemsStyle " ng-model="app.galleryItems"
+             ng-repeat="item in app.galleryItems" ng-click="app.GotoUrl(item.ItemURL);">
+
+            <div>
+                <input type="image" src={{item.ImageURL}} class="ImageItemsStyle" title={{item.Name}} value={{item.Value}} />
+                <input type="text" class="DescriptionItemsStyle" value={{item.Description}} maxlength="1000" />
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

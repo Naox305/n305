@@ -1,0 +1,54 @@
+#HomePageBody
+{
+
+}
+
+#MainMenu
+{ 
+    margin: 150px 0 0 -250px;
+    left: 50%;
+    top: 0%;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 90;
+    visibility: visible;
+}
+
+#ProductsOption
+{
+    /*margin:50%,0%,0%,50%;
+    margin-bottom:50%;
+    margin-top:50%;*/
+    margin-left:0px;
+    margin-right:250px;
+    width:250px;
+    height:500px;
+    color:black;
+    font-size:48px;
+    font-weight:600;
+    font-family:'Segoe UI';
+    background-color:transparent;
+    border-color:black;
+    border-style:solid;
+    border-width:thin;
+    position:absolute;
+}
+
+#ContactOption
+{
+    /*margin:50%,0%,0%,50%;*/
+    margin-left:250px;
+    margin-right:0px;
+    width:250px;
+    height:500px;
+    color:black;
+    font-size:48px;
+    font-weight:600;
+    font-family:'Segoe UI';
+    background-color:transparent;
+    border-color:black;
+    border-style:solid;
+    border-width:thin;
+    position:absolute;
+}

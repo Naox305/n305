@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title> </title>
+
+            <script type="text/javascript" language="javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+            @*<script type="text/javascript" language="javascript"></script>*@
+
+            <link href="@Url.Content("~/Content/favicon1.ico")" rel="shortcut icon"/>
+            <meta name="viewport" content="width=device-width" />
+            @Styles.Render("~/Content/LayoutStyles.css")
+            @Scripts.Render("~/bundles/modernizr")
+
+            @model n305.Models.Navigation.MyWebSites
+
+            @{
+              
+   
+            }
+
+            <script>
+                /*____________________________________BEGINING of jQuery___________________________________________________*/
+                $(document).ready()
+                {
+                    /*____________________________________BEGINING of JavaScript___________________________________________________*/
+                    function MakeVisiable() {
+
+                        var ThisElement = document.getElementById("NavigationMenu");
+                        var ThisElementOpacity = document.getElementById("NavigationMenuOpacity");
+                        var ThisMenuBar = document.getElementById("menuBar");
+
+
+                        if (ThisElement.style.visibility == "visible") {
+                            ThisElement.style.visibility = "hidden";
+
+                        }
+                        else {
+                            ThisElement.style.visibility = "visible";
+                        }
+
+                    }
+
+                    function MakeHidden() {
+                        var ThisElement = document.getElementById("NavigationMenu");
+                        ThisElement.style.visibility = "collapse";
+                    }
+
+                    /*____________________________________END of JavaScript___________________________________________________*/
+                }
+                
+
+                $(document).click(
+                    function(event) { 
+                        if (!$(event.target).closest('#NavigationMenu').length && !$(event.target).closest('#DropDownMenu').length) {
+                            if($('#NavigationMenu').is(":visible")) {
+                                $('#NavigationMenu').css("visibility", "hidden");
+                            }
+                        }
+                    }
+                        );
+                    
+                /*____________________________________END of jQuery___________________________________________________*/
+             </script>
+
+        </head>
+
+
+
+
+
+    <body id="LayoutBody" onresize="MakeHidden()">
+
+        <div id="TopBar">
+            <div id="TitleBar">
+                <button id="n305" title="Home" onclick="location.href= '@Url.Action("Index")'">
+                    n305
+                </button>
+
+                <button id="DropDownMenu" title="Menu" onclick="MakeVisiable()">
+                    <div class="ColoredLines"></div>
+                    <div class="ClearLines"></div>
+                    <div class="ColoredLines"></div>
+                    <div class="ClearLines"></div>
+                    <div class="ColoredLines"></div>
+
+                </button>
+
+            </div>
+
+            @*Create buttons for menu bar*@
+            <div id="menuBar">
+                @n305.Models.Navigation.ControlMaker.Instance.CreateMenuBarItems(ViewBag.Model.GetList())
+            </div>
+
+            @*Create options for drop menu*@
+            <div id="NavigationMenu">
+                @n305.Models.Navigation.ControlMaker.Instance.CreateSelectBox(ViewBag.Model.GetList())
+            </div>
+
+        </div>
+
+        <div id="Painting" title="Black Ink Painting"></div>
+
+
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+
+
+    </body>
+
+    </html>

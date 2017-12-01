@@ -1,0 +1,114 @@
+﻿@model n305.Models.Navigation
+
+
+@{
+
+    var customerName = ViewBag.Name;//Request["NameBox"];
+    String customerEmail = ViewBag.Email;// "oldboy29@gmail.com";//Request["EmailBox"];
+    String customerRequest = ViewBag.Message;// Request["MessageBox"];
+    var errorMessage = "";
+    var debuggingFlag = false;
+    var myEmail = "n305.net@gmail.com";
+    var myPassword = "nx000001";
+
+
+    System.Net.Mail.MailMessage email = new System.Net.Mail.MailMessage();
+    System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
+
+    try
+    {
+        smtp.Host = "smtp.gmail.com";
+
+        // set up the Gmail server
+        smtp.EnableSsl = true;
+        smtp.Port = 587;
+        smtp.Credentials = new System.Net.NetworkCredential(myEmail, myPassword);
+        smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+        smtp.UseDefaultCredentials = false;
+
+        // draft the email
+        System.Net.Mail.MailAddress fromAddress =
+            new System.Net.Mail.MailAddress(myEmail);
+
+        email.From = fromAddress;
+        email.To.Add(myEmail);
+        email.Subject = "Help request from - " + customerName;
+        email.Body = customerRequest;
+
+        smtp.Send(email);
+
+        //// Initialize WebMail helper
+        //WebMail.SmtpServer = "smtp.gmail.com";
+        //WebMail.SmtpPort = 587; // Authentication: StartTLS
+        //WebMail.UserName = "n305.net@gmail.com";
+        //WebMail.Password = "nx000001";
+        //WebMail.From = customerEmail;
+        //WebMail.EnableSsl = true;
+        //WebMail.SmtpUseDefaultCredentials = false;
+
+        //var FromMe = "n305.net@gmail.com";
+        ////// Send email
+
+        //if (customerEmail.Contains("@") == true && String.IsNullOrWhiteSpace(customerRequest) == false)
+        //{
+        //}
+        //else
+        //{
+        //    customerEmail = null;
+        //}
+
+        //WebMail.Send(to: FromMe,
+        //    subject: "Help request from - " + customerName,
+        //    body: customerEmail + " " + customerRequest, from: customerEmail);
+
+    }
+    catch (Exception ex)
+    {
+        errorMessage = ex.Message;
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    @Styles.Render("~/Styles/ProcessRequest.css")
+    <title></title>
+</head>
+<body ng-controller="ContactCTRL as contact">
+    <div id="PageCover" >
+
+    </div>
+
+    <div id="ResponseBox">
+        
+@if (errorMessage == "")
+{
+    <article id="ResponseText">
+        @customerName,
+        <p></p>
+        An email message has been sent containing the following message:
+        <p>@customerRequest</p>
+    </article>
+}
+else
+{
+                <article id="ResponseText">
+                    The email was not sent.
+                    Please make sure you provide a name, email address, and a message.
+                </article>
+
+                if (debuggingFlag)
+                {
+            <p>The following error was reported:</p>
+                <p><em>@errorMessage</em></p>
+        }
+            }
+        
+    </div>
+</body>
+
+</html>
+
+

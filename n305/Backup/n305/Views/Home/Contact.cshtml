@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+@model n305.Models.Contact
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    @Styles.Render("~/Content/ContactPageStyles.css")
+</head>
+
+<body id="EmailView">
+
+    <div id="PageCover">
+
+    </div>
+
+@using (Html.BeginForm("Email", "Home"))
+{
+    @*<div id="ContactBox">*@
+        <fieldset id="ContactField">
+
+            <div class="LabelField">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            @Html.TextBoxFor(model => model.Name, new { @id = "NameBox" })
+
+            <div class="LabelField">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            @Html.TextBoxFor(model => model.Email, new { @id = "EmailBox" })
+
+            @*<div class="MessageField">
+                @Html.LabelFor(model=>model.Message)
+            </div>*@
+
+            @*<div class="MessageField">*@
+            @Html.TextAreaFor(model => model.Message, new { @id = "MessageBox", @maxlength="1400" })
+            @*</div>*@
+
+
+            <input type="submit" value="SEND" id="SendButton" />
+
+        </fieldset>
+    @*</div>*@
+}
+
+
+</body>
+</html>

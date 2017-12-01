@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Gallery";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    @Styles.Render("~/Styles/GalleryPageStyles.css")
+</head>
+
+
+<body id="AboutView" ng-controller="MenuCTRL as app">
+
+    <div id="PageCover">
+
+    </div>
+
+    <div id="ItemBox" class="row-fluid">
+        <div class="col-sm-1 GalleryItemsStyle " ng-model="app.menuItems"
+             ng-repeat="item in app.menuItems" ng-click="app.GotoUrl(item.ItemURL);">
+
+            <div>
+                <input type="image" src={{item.ImageURL}} class="ImageItemsStyle" title={{item.Name}} value={{item.Value}} />
+                <input type="text" class="DescriptionItemsStyle" value={{item.Description}} maxlength="1000" />
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

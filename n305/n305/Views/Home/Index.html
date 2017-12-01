@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Style/IndexStyleSheet.css" rel="stylesheet" />
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular-route.min.js"></script>
+    <script src="../Model/modelBlank.js"></script>
+    <script src="../Model/modelPictures.js"></script>
+    <script src="../Model/modelVideos.js"></script>
+    <script src="../Controllers/controller1.js"></script>
+    <script src="../Controllers/app.js"></script>
+</head>
+<body data-ng-app="MainModule">
+    <div id="title">Angular Experiement 1</div>
+    <div id="mainDiv">
+        <div id="areaForPartialView" ng-controller="Controller1">
+            <div data-ng-view=""></div>
+            <button class="button" ng-click="navigateToUrl(event)">{{viewName}}</button>
+        </div>
+
+    </div>
+</body>
+</html>

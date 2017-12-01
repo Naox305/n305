@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "PrivacyPolicy";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    @Styles.Render("~/Content/PrivacyPolicyPageStyles.css")
+</head>
+
+
+<body id="PrivacyPolicyView">
+
+    <div id="PageCover">
+
+    </div>
+    <button id="Explore" title="Click to explore" onclick="MakeVisiable()">MENU</button>
+
+    <div id="PrivacyPolicyBox">
+
+        <article id="PrivacyPolicyText">
+            NAOX does not collect or publish any personal information. If you would like to report any violations of this policy, please contact us at 
+            <b id="ContactAddress" onclick="location.href= '@Url.Action("Contact")'"> n305 .net@gmail.com </b> </article>
+    </div>
+</body>
+</html>

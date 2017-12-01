@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title> </title>
+
+            <script type="text/javascript" language="javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+            <script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+            <script src="~/app/models/galleryModel.js"></script>
+            <script src="~/app/models/menuModel.js"></script>
+            <script src="~/app/app.js"></script>
+            <script src="~/app/global-factory.js"></script>
+            <script src="~/app/gallery-controller.js"></script>
+            <script src="~/app/layout-controller.js"></script>
+            <script src="~/app/menu-controller.js"></script>
+            <script src="~/app/about-controller.js"></script>
+            <script src="~/app/contact-controller.js"></script>
+            <script src="~/app/layout-jQuery.js"></script>
+
+            @*<script type="text/javascript" language="javascript"></script>*@
+
+            <link href="@Url.Content("~/Media/favicon1.ico")" rel="shortcut icon"/>
+            <meta name="viewport" content="width=device-width" />
+            @Styles.Render("~/Styles/LayoutStyles.css")
+            @*@Scripts.Render("~/bundles/modernizr")*@
+
+            @model n305.Models.Navigation.MyWebSites
+
+            @{
+              
+   
+            }
+
+        </head>
+
+
+
+
+
+    <body id="LayoutBody" onresize="MakeHidden()" ng-app="MainModule" >
+
+        <div id="TopBar">
+            <div id="TitleBar" ng-controller="LayoutCTRL as layout">
+
+                <div id="n305" title="Home" onclick="location.href= '@Url.Action("Index")'" ng-show="showHomeButton"><i class="fa fa-home fa-3x"></i></div>
+
+            </div>
+
+        </div>
+
+        <div id="Painting" class="{{showHomeButton ? '' : 'pulsating'}}" ng-controller="LayoutCTRL as layout" title="Black Ink Painting" ng-click="layout.GotoUrl('Home/Menu');"></div>
+
+
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+
+    </body>
+
+    </html>

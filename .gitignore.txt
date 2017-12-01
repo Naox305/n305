@@ -1,0 +1,8 @@
+
+#Ignoring the following folders#
+
+n305/n305/bin
+
+n305/n305.Tests
+
+n305/n305/obj

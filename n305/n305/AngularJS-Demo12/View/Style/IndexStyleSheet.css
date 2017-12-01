@@ -1,0 +1,160 @@
+﻿body {
+    background-color:black;
+}
+
+#title{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:200px;
+    height:25px;
+    font-family:'Segoe UI';
+    font-size:18px;
+    text-align:center;
+    color:red;
+    border:5px solid black;
+    position:relative;
+}
+
+#mainDiv{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:75%;
+    height:500px;
+    text-align:center;
+    color:black;
+    border:20px outset red;
+    position:relative;
+}
+
+#areaForPartialView{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:25px;
+    bottom:0;
+    width:75%;
+    height:450px;
+    text-align:center;
+    color:black;
+    border:5px solid black;
+    position:relative;
+}
+
+.button{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:20%;
+    height:40px;
+    border:2px inset red;
+    font-family:'Segoe UI';
+    font-size:16px;
+    color:red;
+    background-color:black;
+    text-align:center;
+    position:relative;
+}
+
+
+#ngAbuseView{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:75%;
+    height:400px;
+    text-align:center;
+    overflow-y:auto;
+    color:red;
+    background-color:black;
+    border:5px solid red;
+    position:relative;
+}
+
+.copyMe{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:100px;
+    height:100px;
+    text-align:center;
+    color:red;
+    font-family:'Comic Sans MS';
+    font-size:24px;
+    background-color:black;
+    border:5px solid red;
+    position:relative;
+}
+.copyMe:hover{
+    color:yellow;
+    background-color:black;
+    border:5px solid yellow;
+    font-style:italic;
+}
+
+#pictureView{
+  margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:75%;
+    height:400px;
+    text-align:center;
+    overflow-y:auto;
+    color:red;
+    background-color:black;
+    border:5px solid red;
+    position:relative;
+}
+
+#image{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:auto;
+    max-height:90%;
+    text-align:center;
+    position:relative;
+}
+
+#videoView{
+  margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:75%;
+    height:400px;
+    text-align:center;
+    overflow-y:auto;
+    color:red;
+    background-color:black;
+    border:5px solid red;
+    position:relative;
+}
+
+#video{
+    margin:0 auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    height:auto;
+    text-align:center;
+    position:relative;
+}

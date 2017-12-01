@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    @Styles.Render("~/Styles/AboutPageStyles.css")
+
+</head>
+
+
+<body id="AboutView" ng-controller="AboutCTRL as about">
+    
+    <div id="PageCover">
+
+    </div>
+    
+
+    <div id="AboutBox">
+
+            <article id="AboutText">
+                n305 is an experimental, .NET, AngularJS 1.5x website. The design of n305 was inspired by Universal Windows Platform apps, Miami Beach, and Japanese ink paintings. 
+                I created n305 to help market my UWP apps and as an early experiment in combining (C# and JavaScript based) frameworks. Please contact me with any questions or comments at 
+                <br />
+                <b id="ContactAddress" title="Contact"> n305.net@gmail.com </b>
+            </article>
+        <img src="@Url.Content("~/Media/NanaOwiroduImage.jpg")" id="Explore" title="Nana" ><img />
+</div>
+</body>
+</html>

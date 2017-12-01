@@ -1,0 +1,339 @@
+﻿
+/*______________________BEGINING of Desktop Media Screen______________________________________*/
+@media screen and (min-width: 600px) {
+
+    #Painting {
+        background-image: url('../Media/n305 homepage11.jpg');
+        background-position: center;
+        background-size:cover;
+        scrollbar-base-color:white;
+        border:solid;   
+        border-color:black;
+        border-width:medium;
+        width: 75%;
+        height:80%;
+        left:12.5%;
+        right:12.5%;
+        top: 10%;
+        position: fixed;
+         z-index:1;
+    }
+
+    #TopBar {
+        position: fixed;
+        margin-top: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+        height: 80px;
+        z-index: 89;
+    }
+
+    #n305{
+        margin: auto;
+        position: absolute;
+        margin-top:0px;
+        margin-left:10px;
+        top: 0px; 
+        left: 0px; 
+        bottom: 0; 
+        right: 0;
+    }
+
+    #menuBar {
+        visibility:visible;
+    }
+
+   #TitleBar{
+        height: 40px;
+    }
+
+
+   #DropDownMenu{
+       visibility:collapse;
+     }
+
+    #NavigationMenu {
+        visibility: collapse;
+    }
+}/*______________________End of Desktop Media Screen______________________________________*/
+
+
+/*______________________BEGINING of Mobile Media Screen______________________________________*/
+@media screen and (max-width: 599px) {
+
+    #Painting {
+        background-image: url('../Media/n305 homepage11.jpg');
+        background-position: center;
+        background-size: cover;
+        border:solid;   
+        border-color:black;
+        border-width:medium;
+        width: 75%;
+        height:60%;
+        top:20%;
+        left:12.5%;
+        right:12.5%;
+        position: fixed;
+         z-index:1;
+    }
+
+      #TopBar {
+        position: fixed;
+        margin-top: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+        width: 100%;
+        height: 40px;
+        z-index: 89;
+    }
+
+       #n305{
+        margin: auto;
+        position: absolute;
+        margin-top:0px;
+        top: 0px; 
+        left: 0; 
+        bottom: 0; 
+        right: 0;
+       }
+
+    #menuBar {
+        visibility:hidden;
+    }
+
+    #TitleBar{
+        height: 80px;
+    }
+
+     #DropDownMenu{
+       visibility:visible;
+     }
+
+     #NavigationMenu {
+        visibility: hidden;
+    }
+        
+}/*______________________End of Mobile Media Screen______________________________________*/
+
+ #Painting:hover
+ {
+      /*border-color:navy;
+      background-image: url('n305 homepage.jpg');
+        background-position: center;
+        background-size: cover;*/
+ }
+
+.pulsating{
+    -webkit-animation: pusate .5s infinite alternate;
+    -moz-animation: pusate .5s infinite alternate;
+    -animation: pusate .5s infinite alternate;
+    text-shadow: 0 0 8px #ccc;
+}
+@-webkit-keyframes pusate {
+    from { box-shadow: 0 0 10px black; }
+    to { box-shadow: 0 0 30px black; }
+}
+@-moz-keyframes pusate {
+    from { box-shadow: 0 0 10px black; }
+    to { box-shadow: 0 0 30px black; }
+}
+@keyframes pusate {
+    from { box-shadow: 0 0 10px black; }
+    to { box-shadow: 0 0 30px black; }
+}
+
+
+  #LayoutBody {
+        width: auto;
+        background-color:transparent;
+        margin: 0 auto;
+        position: relative;
+       
+    }
+
+   #TitleBar {
+        position: fixed;
+        margin-top: 0px;
+        margin-right: 0%;
+        margin-left: 0%;
+        width: 100%;
+        text-align:center;
+        border-width:.1px;
+        background-color:transparent;
+        z-index: 1;
+    }
+
+   #menuBar {
+        position: fixed;
+        margin-top: 40px;
+        margin-right: 0%;
+        margin-left: 0%;
+        width: 100%;
+        height: 40px;
+        text-align:center;
+        border-width:.1px;
+        background-color:black;
+        z-index: 1;
+    }
+    
+    
+    #HeaderTag {
+    }
+
+
+    #n305
+    {   
+        width: 200px;
+        height:40px;
+        background-color:transparent;
+        font-family:'Segoe UI';
+        font-size:29px;
+        font-weight:bold;
+        font-style:oblique;
+        color:black;
+        text-align: center;
+        border-width:0px;
+        z-index:100;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: lime;
+    }
+
+    /*#n305:hover
+    {
+        color:lime;
+    }*/
+
+   
+    /*#AboutButton {
+        
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        font-family: 'Segoe UI Symbol';
+        font-size: 25px;
+        font-weight: 900;
+        border-color: white;
+        margin-left: 100%;
+        margin-right: 0%;
+        margin-top: 0%;
+        float: right;
+        position: relative;
+      
+        z-index: 2;
+    }*/
+
+        #DropDownMenu {
+        width: 40px;
+        height: 100%;
+        background-color:transparent;
+        border-color:transparent;
+        margin:0 auto;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        margin-left: 0%;
+        margin-right: 100%;
+        position: absolute;
+        z-index: 2;
+        }
+
+    #DropDownMenu:hover{
+        border-color:black;
+        background-color:lime;
+    }
+
+    .ColoredLines
+    {
+        width:100%;
+        height:20%;
+        background-color:white;
+        position:relative;
+
+    }
+
+    .ClearLines
+    {
+        width:100%;
+        height:20%;
+        background-color:transparent;
+        position:relative;
+    }
+
+  
+    /*#AboutButton:hover
+    {
+       border-color:black;
+        background-color:lime;
+    }*/
+
+    
+    .MenuButtons {
+        width: 24%;
+        height: 40px;
+        background-color:transparent;
+        border-color:transparent;
+        border-width:1px;
+        color:white;
+        margin:0 auto;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        font-family:'Segoe UI';
+        font-size:30px;
+        font-weight:500;
+        position: relative;
+        z-index: 2;
+        }
+
+   .MenuButtons:hover {
+       background-color:lime;
+       border-color:black;
+       color:black;
+       font-style:oblique;
+        }
+
+    #content-wrapper {
+        width: 100%;
+        }
+
+    #CreatedSelectlistItem {
+        z-index: 100;
+    }
+
+    .MenuItem {
+        width: 100%;
+        font-size: 24px;
+        font-family: 'Segoe UI';
+        background-color: transparent;
+        color:white;
+        border-width: 0px;
+        }
+
+    .MenuItem:hover {
+        background-color: lime;
+        color:black;
+        }
+
+
+    #NavigationMenu {
+        margin-top: 80px;
+        margin-left: 0%;
+        margin-right: 100%;
+        float: left;
+        height: auto;
+        width: 236px;
+        z-index: 100;
+        font-size: 24px;
+        font-family: 'Segoe UI';
+        border-color: darkorchid;
+        border-style: solid;
+        border-width: medium;
+        background-color: black;
+        position: relative;
+        }
+
+
+

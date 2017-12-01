@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    @Styles.Render("~/Content/AboutPageStyles.css")
+
+</head>
+
+
+<body id="AboutView">
+    
+    <div id="PageCover">
+
+    </div>
+    
+
+    <div id="AboutBox">
+
+            <article id="AboutText">
+                n305 is an experimental, responsive, .NET MVC website. The design of n305 was inspired by my Windows Store Apps, Miami Beach, and Japanese ink paintings. 
+                I created n305 to help market my Windows Store Apps and as a showcase to some of my other creations. Please contact me with any questions or comments at 
+                <b id="ContactAddress" onclick="location.href= '@Url.Action("Contact")'" title="Contact"> n305 .net@gmail.com </b>
+                @*<br>
+                Thanks for visiting,
+                <br>
+                <b id="MyName">
+                Nana
+                </b>*@   
+            </article>
+        <input type="image" src="@Url.Content("~/Content/NanaOwiroduImage.jpg")" id="Explore" title="Nana" onclick="location.href = 'http://www.linkedin.com/pub/nana-owirodu/77/430/246'">
+</div>
+</body>
+</html>

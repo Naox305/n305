@@ -1,0 +1,86 @@
+﻿@model n305.Models.Navigation
+
+
+@{
+    var customerName = ViewBag.Name;//Request["NameBox"];
+    String customerEmail = ViewBag.Email;// "oldboy29@gmail.com";//Request["EmailBox"];
+    String customerRequest = ViewBag.Message;// Request["MessageBox"];
+    var errorMessage = "";
+    var debuggingFlag = false;
+    try
+    {
+        // Initialize WebMail helper
+        WebMail.SmtpServer = "smtp.gmail.com";
+        WebMail.SmtpPort = 587; // Authentication: StartTLS
+        WebMail.UserName = "n305.net@gmail.com";
+        WebMail.Password = "nx000001";
+        WebMail.From = customerEmail;
+        WebMail.EnableSsl = true;
+        WebMail.SmtpUseDefaultCredentials = false;
+        
+        var FromMe = "n305.net@gmail.com";
+        //// Send email
+
+        if (customerEmail.Contains("@") == true && String.IsNullOrWhiteSpace(customerRequest) == false)
+        { 
+        }
+        else
+        {
+            customerEmail = null;
+        }
+
+        WebMail.Send(to: FromMe,
+            subject: "Help request from - " + customerName,
+            body: customerEmail + " " + customerRequest, from: customerEmail);
+
+    }
+    catch (Exception ex)
+    {
+        errorMessage = ex.Message;
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    @Styles.Render("~/Content/ProcessRequest.css")
+    <title></title>
+</head>
+<body>
+    <div id="PageCover">
+
+    </div>
+
+    <div id="ResponseBox">
+        
+@if (errorMessage == "")
+{
+    <article id="ResponseText">
+        @customerName,
+        <p></p>
+        An email message has been sent containing the following message:
+        <p>@customerRequest</p>
+    </article>
+}
+else
+{
+                <article id="ResponseText">
+                    The email was not sent.
+                    Please make sure you provide a name, email address, and a message.
+                </article>
+
+                if (debuggingFlag)
+                {
+            <p>The following error was reported:</p>
+                <p><em>@errorMessage</em></p>
+        }
+            }
+        
+    </div>
+</body>
+
+</html>
+
+
